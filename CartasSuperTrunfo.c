@@ -14,6 +14,7 @@ int main() {
     char estado1, estado2;
     char codigoDaCarta1[5], codigoDaCarta2[5];
     char cidade1[50], cidade2[50];
+    double superPoder1, superPoder2;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -65,6 +66,8 @@ int main() {
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
+    
     printf("----- CIDADE 01----- \n");
     printf("Nome da cidade: %s\n", cidade1);
     printf("Estado: %c\n", estado1);
@@ -86,6 +89,19 @@ int main() {
     printf("Numero de Pontos Turisticos: %d\n", qtdePontosTuristicos2);
     printf("Densidade Populacional: %.2f\n", populacao2/area2);
     printf("PIB per Capita: %.2f\n", pib2/populacao2);
+
+    superPoder1 = (float) populacao1 + area1 + pib1 + qtdePontosTuristicos1 + pib1/populacao1 - populacao1/area1;
+    superPoder2 = (float) populacao2 + area2 + pib2 + qtdePontosTuristicos2 + pib2/populacao2 - populacao2/area2;
+
+    printf("Comparacao de Cartas\n");
+    printf("Populacao: Carta %d venceu\n", populacao1>populacao2);
+    printf("Area: Carta %d venceu \n", area1>area2);
+    printf("PIB: Carta %d venceu \n", pib1>pib2);
+    printf("Pontos turisticos: Carta %d venceu \n", qtdePontosTuristicos1 > qtdePontosTuristicos2);
+    printf("Densidade populacional: Carta %d venceu \n", populacao1/area1 > populacao2/area2);
+    printf("PIB per Capita: Carta %d venceu \n", pib1/populacao1 > pib2/populacao2);
+    printf("Super Poder: Carta %d venceu \n", superPoder1 > superPoder2);
+
     
     return 0;
 }
